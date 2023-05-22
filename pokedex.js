@@ -12,35 +12,33 @@
 // };
 // console.log(displayPokemonInfo(myPokemon));
 class Pokemon {
-    constructor(name, number) {
-        this._name = name;
-        this._number = number;
+  constructor(name, number) {
+    this._name = name;
+    this._number = number;
+  }
+  get name() {
+    return this._name;
+  }
+  set name(name) {
+    if (name.length >= 1 && name.length <= 50) {
+      this._name = name;
+    } else {
+      throw new Error("Name must be between 1 and 50 characters long.");
     }
-    get name() {
-        return this._name;
+  }
+  get number() {
+    return this._number;
+  }
+  set number(number) {
+    if (number >= 1 && number <= 151) {
+      this._number = number;
+    } else {
+      throw new Error("Number must be between 1 and 151.");
     }
-    set name(name) {
-        if (name.length >= 1 && name.length <= 50) {
-            this._name = name;
-        }
-        else {
-            throw new Error("Name must be between 1 and 50 characters long.");
-        }
-    }
-    get number() {
-        return this._number;
-    }
-    set number(number) {
-        if (number >= 1 && number <= 151) {
-            this._number = number;
-        }
-        else {
-            throw new Error("Number must be between 1 and 151.");
-        }
-    }
-    toString() {
-        return `Name: ${this._name}, Number: ${this._number}`;
-    }
+  }
+  toString() {
+    return `Name: ${this._name}, Number: ${this._number}`;
+  }
 }
-const myPokemon = new Pokemon("Pikachu", 25);
+const myPokemon = new Pokemon("Artikodin", 144);
 console.log(myPokemon.toString());
